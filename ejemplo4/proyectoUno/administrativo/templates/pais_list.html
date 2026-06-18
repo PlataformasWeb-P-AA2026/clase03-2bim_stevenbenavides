@@ -1,0 +1,6 @@
+<h3> Listado de paises {{ numero_paises }}</h3>
+<ul>
+    {{% for p in paises %}}
+        <li>{{ p.nombre }} - {{ p.capital }}</li>
+    {{% endfor %}}
+</ul>
