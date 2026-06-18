@@ -1,0 +1,11 @@
+<h2>Listado de Estudiantes</h2>
+
+{% for e in estudiantes %}
+  <br/>
+  <b>{{e.id}} - {{e.nombre}} - telefonos: {{ e.obtener_numero_telefonico }}</b>
+  <br/>
+{% endfor %}
+
+<hr>
+
+</ul>
