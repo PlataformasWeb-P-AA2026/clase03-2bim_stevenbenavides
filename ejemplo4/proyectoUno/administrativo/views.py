@@ -21,10 +21,12 @@ def index(request):
     # se lo almacena en una variable llamada
     # estudiantes
     estudiantes = Estudiante.objects.all()
+    paises = Pais.objects.all()
     # en la variable tipo diccionario llamada informacion_template
     # se agregará la información que estará disponible
     # en el template
-    informacion_template = {'estudiantes': estudiantes, 'numero_estudiantes': len(estudiantes)}
+    informacion_template = {'estudiantes': estudiantes, 'numero_estudiantes': len(estudiantes), 
+            'paises': paises, 'numero_paises': len(paises)}
     return render(request, 'index.html', informacion_template)
 
 
@@ -107,3 +109,8 @@ def pais_list(request):
     paises = Pais.objects.all()
     informacion_template = {'paises': paises, 'numero_paises': len(paises)}
     return render(request, 'pais_list.html', informacion_template)
+
+def obtener_pais(request, id):
+    pais = Pais.objects.get(pk=id)
+    informacion_template = {'pais': pais}
+    return render(request, 'obtener_pais.html', informacion_template)

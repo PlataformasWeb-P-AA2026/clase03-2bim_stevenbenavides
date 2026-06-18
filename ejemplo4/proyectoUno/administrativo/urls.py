@@ -17,10 +17,14 @@ urlpatterns = [
             name='editar_estudiante'),
         path('eliminar/estudiante/<int:id>', views.eliminar_estudiante,
             name='eliminar_estudiante'),
+            
         path('paises/', views.pais_list, 
             name='pais_list'),
 
         path('pais/crear/', views.crear_pais, 
              name='crear_pais'),
+
+        path('pais/<int:id>', views.obtener_pais, 
+             name='obtener_pais'),
 
  ]
